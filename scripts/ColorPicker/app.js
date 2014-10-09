@@ -14,7 +14,6 @@ define([
 		this.divId = params.divId;
 		this.defaultColor = params.defaultColor;
 		
-		
 		this.colorPickerModel = new ColorPickerModel({
 			divId: this.divId,
 			defaultColor: this.defaultColor
@@ -25,23 +24,27 @@ define([
 			el: $('#' + this.divId)
 		});
 	};
-
-
-	
 	
 	p.render = function () {
-		//$('#'+this.divId).css({'background-color': this.defaultColor});
 		this.colorPickerView.render();
+				
+		$('#miniSquare > div').hover(function () {
+			var thisColor = $(this).attr('data-color-rgb');
+			
+			$('#square').css({
+				'background-color': thisColor
+			});
+			$('#rgb input[type=text]').val(thisColor);
+		}, function () {
+			var defaultColor = $('#square').attr('data-color');
+			
+			$('#square').css({
+				'background-color': defaultColor
+			});
+			$('#rgb input[type=text]').val(defaultColor);
+		});
+		
 	};
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	return ColorPicker;
 });

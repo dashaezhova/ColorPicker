@@ -1,14 +1,15 @@
 define([
 	'backbone',
-	'text!ColorPicker/templates/mainTemplate.html'
-], function (Backbone, MainTemplate) {
+	'text!ColorPicker/templates/mainTemplate.html',
+	'text!ColorPicker/templates/inputTemplate.html',
+	'text!ColorPicker/templates/squareTemplate.html'
+], function (Backbone, MainTemplate, InputTemplate, SquareTemplate) {
 
+	var allTemplates = SquareTemplate + InputTemplate + MainTemplate;
 	var ColorPickerView = Backbone.View.extend({
 		initialize: function () {
-			alert("создался вид");
 		},
-		
-		template: _.template(MainTemplate),
+		template: _.template(allTemplates),
 		
 		render: function () {
 			this.$el.html(this.template(this.model.toJSON()));
