@@ -1,0 +1,100 @@
+#square {
+	background-color: blue;
+	cursor: pointer;
+	float: left;
+	height: 30px;
+	width: 30px;
+}
+
+#apparent-input {
+	width: 108px;
+}
+
+/* begin color-palette */
+
+#color-palette {
+	height: 250px;
+	outline: 1px solid #88A4F8;
+	position: relative;
+	top: 15px;
+	width: 168px;
+}
+
+#color-palette input:focus {
+	outline: none;
+}
+
+/* begin colors-wrapper */
+
+#colors-wrapper {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#colors-wrapper > div {
+	cursor: pointer;
+	float: left;
+	height: 20px;
+	margin: 2px;
+	width: 20px;
+}
+
+/* end colors-wrapper*/
+
+#color-palette label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+#color-palette label p {
+	cursor: pointer;
+	display: inline;
+}
+
+#color-palette label input[type=radio] {
+	float: left;
+	height: 18px;
+	margin-top: 0;
+	width: 18px;
+}
+
+#color-palette label input[type=text] {
+	background-color: #F3FAFE;
+	border: 1px solid #88A4F8;
+	border-radius: 5px;
+	font: 14px Tahoma;
+	margin-top: 5px;
+	padding: 3px;
+	transition: .5s;
+	width: 100px;
+}
+
+#color-palette #rgb input[type=text] {
+	margin-left: 24px;
+}
+
+#color-palette #cmyk div {
+	margin-left: 24px;
+}
+
+#color-palette #cmyk div input[type=text] {
+	width: 23px;
+}
+
+#color-palette input[type=button] {
+	background-color: #88A4F8;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	display: block;
+	font: 18px Arial;
+	height: 35px;
+	margin: 0 auto;
+	width: 108px;
+}
+
+#color-palette input:disabled {
+	background-color: #E2E2E2 !important;
+}
+
+/* end color-palette */

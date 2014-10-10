@@ -1,3 +1,19 @@
-<input type="text" value="<%= defaultColor %>" />
-<div id="square"></div>
-<div id="hiddenBlock"></div>
+<div id="color-palette">
+	<div id="colors-wrapper"></div>
+	<label id="rgb">
+		<input type="radio" checked name="typeColor" />
+		<p>RGB (HEX)</p>
+		<input type="text" value="<%= defaultColor %>" data-color="<%= defaultColor %>" maxlength="7" />
+	</label>
+	<label id="cmyk">
+		<input type="radio" name="typeColor" />
+		<p>CMYK</p>
+		<div>
+			<input type="text" value="" id="cmyk-input-c" maxlength="3" disabled />
+			<input type="text" value="" id="cmyk-input-m" maxlength="3" disabled />
+			<input type="text" value="" id="cmyk-input-y" maxlength="3" disabled />
+			<input type="text" value="" id="cmyk-input-k" maxlength="3" disabled />
+		</div>
+	</label>
+	<input type="button" name="submit" value="submit" />
+</div>
