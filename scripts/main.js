@@ -12,5 +12,6 @@ require(["ColorPicker/app"], function (ColorPicker) {
 		divId: 'test_block',
 		defaultColor: '#645654'
 	});
+	
 	colorPicker1.render();
 });
