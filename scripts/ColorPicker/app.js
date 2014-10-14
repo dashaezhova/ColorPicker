@@ -25,7 +25,7 @@ define([
 		this.colorPickerView = new ColorPickerView({
 			model: this.colorPickerModel,
 			el: $('#' + this.divId)
-		});		
+		});
 	};
 	
 	p.render = function () {

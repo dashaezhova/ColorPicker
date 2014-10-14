@@ -30,6 +30,11 @@ define([
 				this.on("setNewValueModel", this.setNewValueModel, this);
 			},
 			
+			events: {
+				"change .radio-button": "makeActive",
+				"change #input-rgb": "validationRgb"
+			},
+			
 			template: _.template(allTemplates),
 			
 			render: function () {
@@ -56,6 +61,17 @@ define([
 			setNewValueModel: function (cmyk, rgb) {
 				this.model.set("currentColorCmyk", cmyk);
 				this.model.set("currentColorRgb", rgb);
+			},
+			
+			makeActive: function (event) {
+				this.$(".text-input").attr("disabled", "disabled");
+				$(event.currentTarget).parent().find(".text-input").removeAttr("disabled");
+			},
+			
+			validationRgb: function (event) {
+				var valueInput = $(event.currentTarget).val();
+				
+				console.log(valueInput);
 			}
 		};
 	})());
