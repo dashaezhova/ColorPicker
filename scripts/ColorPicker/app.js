@@ -1,8 +1,11 @@
 define([
 	'backbone',
 	'ColorPicker/models/ColorPickerModel',
-	'ColorPicker/views/ColorPickerView'
-], function (Backbone, ColorPickerModel, ColorPickerView) {
+	'ColorPicker/views/ColorPickerView',
+	'ColorPicker/collections/CollectionColor',
+	'ColorPicker/views/ColorSquareView',
+	'ColorPicker/models/ColorModel'
+], function (Backbone, ColorPickerModel, ColorPickerView, CollectionColor, ColorSquareView, ColorModel) {
 
 	var ColorPicker = function (params) {
 		this.initialize(params);
@@ -26,24 +29,18 @@ define([
 	};
 	
 	p.render = function () {
+		var that = this;
+		
 		this.colorPickerView.render();
 				
-		$('#miniSquare > div').hover(function () {
-			var thisColor = $(this).attr('data-color-rgb');
+		this.colorPickerModel.get('colorsCollection').each(function (color) {
+			var thisViewColor = new ColorSquareView({
+				model: color,
+				parentView: that.colorPickerView
+			});		
 			
-			$('#square').css({
-				'background-color': thisColor
-			});
-			$('#rgb input[type=text]').val(thisColor);
-		}, function () {
-			var defaultColor = $('#square').attr('data-color');
-			
-			$('#square').css({
-				'background-color': defaultColor
-			});
-			$('#rgb input[type=text]').val(defaultColor);
+			$('#colors-wrapper').append(thisViewColor.render().el);
 		});
-		
 	};
 	
 	return ColorPicker;

@@ -1,19 +1,19 @@
 <div id="color-palette">
 	<div id="colors-wrapper"></div>
 	<label id="rgb">
-		<input type="radio" checked name="typeColor" />
+		<input type="radio" class="radio-button" checked name="typeColor" />
 		<p>RGB (HEX)</p>
-		<input type="text" value="<%= defaultColor %>" data-color="<%= defaultColor %>" maxlength="7" />
+		<input type="text" id="input-rgb" class="text-input" value="<%= currentColorRgb %>" maxlength="7" />
 	</label>
 	<label id="cmyk">
-		<input type="radio" name="typeColor" />
+		<input type="radio" class="radio-button" name="typeColor" />
 		<p>CMYK</p>
 		<div>
-			<input type="text" value="" id="cmyk-input-c" maxlength="3" disabled />
-			<input type="text" value="" id="cmyk-input-m" maxlength="3" disabled />
-			<input type="text" value="" id="cmyk-input-y" maxlength="3" disabled />
-			<input type="text" value="" id="cmyk-input-k" maxlength="3" disabled />
+			<input type="text" class="text-input" value="<%= currentColorCmyk[0] %>" id="cmyk-input-c" maxlength="3" disabled />
+			<input type="text" class="text-input" value="<%= currentColorCmyk[1] %>" id="cmyk-input-m" maxlength="3" disabled />
+			<input type="text" class="text-input" value="<%= currentColorCmyk[2] %>" id="cmyk-input-y" maxlength="3" disabled />
+			<input type="text" class="text-input" value="<%= currentColorCmyk[3] %>" id="cmyk-input-k" maxlength="3" disabled />
 		</div>
 	</label>
-	<input type="button" name="submit" value="submit" />
+	<input type="button" name="submit" id="submit" value="submit" />
 </div>
